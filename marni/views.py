@@ -6,7 +6,7 @@ from .models import Post
 class HomePageView(TemplateView) :  
     template_name = 'home.html'
 
-class HomePageView(ListView):
-    model = Post
-    template_name = 'home.html'
-    context_object_name = 'all_posts_list'
+def page_not_fund_view(request):
+    return render(request, 'marni/404.html', context)
+    context = {}
+
