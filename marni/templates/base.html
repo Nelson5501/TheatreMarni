@@ -7,7 +7,11 @@
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet"/>
-              
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script
+          type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"
+        ></script>      
   
 
     </head>
@@ -18,7 +22,9 @@
       <header>
         <!-- Intro settings -->
         <style>
-          /* Default height for small devices */
+          
+          {% block media %}
+             /* Default height for small devices */
           #intro-example {
             height: 400px;
           }
@@ -29,82 +35,59 @@
               height: 600px;
             }
           }
+          {% endblock media %}
+            
+         
         </style>
       
+      {% block navbar %}
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container-fluid">
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-mdb-toggle="collapse"
-              data-mdb-target="#navbarExample01"
-              aria-controls="navbarExample01"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarExample01">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <img src="https://theatremarni.com/squelettes/img/logo-marni-base.jpg" style="width:10%" alt="logo"><a class="navbar-brand" style="text-center" href="#"></a></img>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button> 
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
                 <li class="nav-item active">
-                  <a class="navbar-brand" style="text-center" href="#">Theatre Marni</a>
+                  <!--<img src="https://theatremarni.com/squelettes/img/logo-marni-base.jpg" style="width:10%" alt="logo"><a class="navbar-brand" style="text-center" href="#"></a></img>-->
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Home</a>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Saisons
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">En Journée</a></li>
+                    <li><a class="dropdown-item" href="#">Concerts</a></li>
+                    <li><a class="dropdown-item" href="#">Dance/Cirque</a></li>
+                    <li><a class="dropdown-item" href="#">Theatres</a></li>
+                    <li><a class="dropdown-item" href="#">Enfants</a></li>
+                    <li><a class="dropdown-item" href="#">Expo</a></li>
+                    <li><a class="dropdown-item" href="#">Events</a></li>
+                    <li><a class="dropdown-item" href="#">Intra Muro</a></li>
+                    <li><a class="dropdown-item" href="#">Touts</a></li>
+                  </ul>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Saisons</a>
-                </li>
-                <li class="nav-item">
-                  <!--<a class="nav-link" href="#">Dropdown</a>-->
-                </li>
+            <li class="nav-link" class="text-center">
+            Photos
+            </li>  
+            <li class="nav-link" class="text-center">
+              Presentation
+              </li>  
+         
               </ul>
             </div>
           </div>
         </nav>
-        <!-- Navbar -->
+{% endblock navbar %}        <!-- Navbar -->
       
-        <!-- Background image -->
-        <div
-          id="intro-example"
-          class="p-5 text-center bg-image"
-          style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/041.webp');"
-        >
-          <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
-            <div class="d-flex justify-content-center align-items-center h-100">
-              <div class="text-white">
-                <h1 class="mb-3">Bienvenue au Theatre Marni</h1>
-                <h5 class="mb-4">Un lieu ou la création est infini</h5>
-                <a
-                  class="btn btn-outline-light btn-lg m-2"
-                  href="https://www.youtube.com/watch?v=c9B4TPnak1A"
-                  role="button"
-                  rel="nofollow"
-                  target="_blank"
-                >Start tutorial</a
-                >
-                <a
-                  class="btn btn-outline-light btn-lg m-2"
-                  href="https://mdbootstrap.com/docs/standard/"
-                  target="_blank"
-                  role="button"
-                >Download MDB UI KIT</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Background image -->
-      </header>
-
 
 
     
           
-
-<!--FOOTER-->
-<div class="sticky-top">
+          {% block footer %}
+            <div class="sticky-top">
 
 <!-- Footer -->
 <footer class="text-center text-lg-start bg-light text-muted">
@@ -161,10 +144,10 @@
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-          <p> Rue de Vergnies 25, 1050 Bruxelles</p>
-          <p>
-           
-            info@theatremarni.com
+          <p><a class="text-reset"href="https://www.google.com/maps/place/Rue+de+Vergnies+25,+1050+Ixelles/@50.8288616,4.3713165,17z/data=!3m1!4b1!4m5!3m4!1s0x47c3c492fe098bad:0x9d2cd243ebae29e8!8m2!3d50.8288616!4d4.3713165" class="text-rese">
+            Rue de Vergnies 25, 1050 Bruxelles</a></p>
+          <p>      
+            info@theatremarni.com</a>
           </p>
                   <p>+32 2 639 09 80</p>
             </div>
@@ -187,15 +170,20 @@
   <!-- Section: Links  -->
 
   <!-- Copyright -->
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+  <div class="fixed-bottom  text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
     © 2023 Copyright:
-    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Theatre Marni</a>
+    <a class="text-reset fw-bold text-center" href="https://mdbootstrap.com/">Theatre Marni</a>
     
   </div>
   <!-- Copyright -->
 </footer>
 <!-- Footer --></div>
 <!--FIN FOOTER-->
+          {% endblock footer %}
+            
+
+<!--FOOTER-->
+
 
 
         
