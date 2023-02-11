@@ -11,7 +11,9 @@ def photos(request):
 def presentation(request):
     return render(request, "presentation.html")
 
-
+def dashboard(request):
+    return render(request, "")
+    
 
 
 
