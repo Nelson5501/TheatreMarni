@@ -1,0 +1,106 @@
+{% load static %}
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'marni/css/signup.css' %}">
+</head>
+
+<body>
+  
+  
+  <section class="h-50">
+    <div class="container py-4 h-60">
+      <div class="row d-flex justify-content-center align-items-center h-50">
+       
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-9 col-lg-6 col-xl-5">
+                  <img src="https://theatremarni.com/squelettes/img/logo-marni-base.jpg"
+                    class="img-fluid" alt="Sample image">
+                </div>
+              
+              <div class="col-xl-6">
+                <div class="card-body p-md-5 text-black">
+                  <h3 class="mb-5 text-uppercase text-center">registration</h3>
+  
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline text-center">
+                        <input type="text" id="form3Example1m" class="form-control form-control-lg" placeholder="First name" />
+                        <label class="form-label" for="form3Example1m"></label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline text-center">
+                        <input type="text" id="form3Example1n" class="form-control form-control-lg" placeholder="Last name" />
+                        <label class="form-label" for="form3Example1n"></label>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="row">
+             
+                  </div>
+  
+                  <div class="form-outline mb-4 text-center">
+                    <input type="text" id="form3Example8" class="form-control form-control-lg" placeholder="Address" />
+                    <label class="form-label" for="form3Example8" ></label>
+                  </div>
+
+                  <div class="form-outline mb-4 text-center">
+                    <input type="text" id="form3Example90" class="form-control form-control-lg" placeholder="ville" />
+                    <label class="form-label" for="form3Example90"></label>
+                  </div>
+  
+                 
+                  <div class="form-outline mb-4 text-center">
+                    <input type="text" id="form3Example90" class="form-control form-control-lg" placeholder="code postal" />
+                    <label class="form-label" for="form3Example90"></label>
+                  </div>
+  
+             
+                  <div class="form-outline mb-4 text-center">
+                    <input type="text" id="form3Example97" class="form-control form-control-lg" placeholder="Email" />
+                    <label class="form-label" for="form3Example97"></label>
+                  </div>
+
+                  <div class="form-outline mb-4 text-center">
+                    <input type="password" id="form3Example97" class="form-control form-control-lg" placeholder="Password" />
+                    <label class="form-label" for="form3Example97"></label>
+                  </div>
+
+                  <div class="form-outline mb-4 text-center">
+                    <input type="password" id="form3Example97" class="form-control form-control-lg" placeholder="Repeat Password" />
+                    <label class="form-label" for="form3Example97"></label>
+                  </div>
+   
+   <section class="d-flex justify-content-center border-bottom">
+
+                  </section>
+                  {% block signup %}
+
+                <form method="post">
+                  <div class="d-flex justify-content-end pt-3">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="sumit" class="btn btn-outline-primary">Confirm</button>
+                    
+                  </form>
+                  {% endblock signup %}
+
+                  </div>
+                 
+              
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+ 
+</form>
+
+
+</body>
