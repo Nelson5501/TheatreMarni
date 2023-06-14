@@ -28,8 +28,10 @@ def navbar(request):
 def signup(request):
     return render(request, 'signup.html', {'request': request})
 
+
 def login(request):
     return render(request, 'login.html', {'request': request})
+
 
 def password(request):
     return render(request, 'password.html', {'request': request})
@@ -42,18 +44,6 @@ def start(request):
     return render(request, 'start.html/catalogue.html', {'request': request})
 
 
-    return HttpResponse(template.render(context, request))
-
-
-def ajout_au_panier(request, produit_id):
-    produit = get_object_or_404(produit, id=produit_id)
-    #vérifiez si l'utilisateur a deja un panier actif
-    panier, created = panier.objects.get_or_create(utilisateur=request.user, produit=produit)
-
-    #si le panier exite déjà, augmentez la quantité de 1
-    if not created:
-        panier.quantite += 1
-        panier.save()
-
-
-    return redirect('page_panier')# Redirigez l'utilisateur vers la pagh
+def confirmation(request):
+    user_confirmed = True
+    return redirect('home')
