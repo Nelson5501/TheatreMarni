@@ -87,15 +87,23 @@ WSGI_APPLICATION = 'theatre.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-from django.db.backends.postgresql.psycopg_any import IsolationLevel
 
-DATABASES = {  
+DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase',
-        }
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'theatremarni',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost', # localhost
+        'PORT': '3306',
+        'OPTION': { 
+            'sql_mode': 'STRICT_ALL_TABLES'
+        },
     }
+}
 
+
+    
 
 #AUTH_USER_MODEL = 'marni'
 
