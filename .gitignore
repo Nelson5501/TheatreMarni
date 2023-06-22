@@ -5,8 +5,7 @@
 __pycache__
 db.sqlite3
 media
-./theater_env
-
+./theatre_env
 
 # Backup files # 
 *.bak 
